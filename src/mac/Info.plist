@@ -6,10 +6,10 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>dogecoin</string>
+			<string>futurecoin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>dogecoin</string>
+				<string>futurecoin</string>
 			</array>
 		</dict>
 	</array>
@@ -30,7 +30,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Dogecoin-Qt</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.dogecoin.wallet-qt</string>
+	<string>com.futurecoin.wallet-qt</string>
 	<key>CFBundleName</key>
 	<string>Dogecoin-Qt</string>
 </dict>

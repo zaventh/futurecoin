@@ -105,7 +105,7 @@ QList<QPair<QString, QString> > queryItems(const QString& queryData) {
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // return if URI is not valid or is no bitcoin URI
-    if(!uri.isValid() || uri.scheme() != QString("dogecoin"))
+    if(!uri.isValid() || uri.scheme() != QString("futurecoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -167,9 +167,9 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("dogecoin://"))
+    if(uri.startsWith("futurecoin://"))
     {
-        uri.replace(0, 11, "dogecoin:");
+        uri.replace(0, 11, "futurecoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -418,7 +418,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "dogecoin.desktop";
+    return GetAutostartDir() / "futurecoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -533,7 +533,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
     header = tr("Dogecoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  dogecoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  futurecoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 

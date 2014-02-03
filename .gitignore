@@ -1,7 +1,7 @@
 src/*.exe
-src/dogecoin
-src/dogecoind
-src/test_dogecoin
+src/futurecoin
+src/futurecoind
+src/test_futurecoin
 .*.swp
 *.*~*
 *.bak
@@ -9,17 +9,21 @@ src/test_dogecoin
 *.orig
 *.o
 *.patch
-.dogecoin
+.futurecoin
+
+.project
+.cproject
+.settings
 
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dogecoin-qt
-Dogecoin-Qt.app
+futurecoin-qt
+Futurecoin-Qt.app
 
 # Unit-tests
 Makefile.test
-dogecoin-qt_test
+futurecoin-qt_test
 
 # Resources cpp
 qrc_*.cpp

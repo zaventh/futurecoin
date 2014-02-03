@@ -4554,7 +4554,7 @@ void static DogecoinMiner(CWallet *pwallet)
 {
     printf("DogecoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("dogecoin-miner");
+    RenameThread("futurecoin-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);

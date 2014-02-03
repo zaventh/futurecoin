@@ -182,10 +182,10 @@ bool AppInit(int argc, char* argv[])
             // First part of help message is specific to bitcoind / RPC client
             std::string strUsage = _("Dogecoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  dogecoind [options]                     " + "\n" +
-                  "  dogecoind [options] <command> [params]  " + _("Send command to -server or dogecoind") + "\n" +
-                  "  dogecoind [options] help                " + _("List commands") + "\n" +
-                  "  dogecoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  futurecoind [options]                     " + "\n" +
+                  "  futurecoind [options] <command> [params]  " + _("Send command to -server or futurecoind") + "\n" +
+                  "  futurecoind [options] help                " + _("List commands") + "\n" +
+                  "  futurecoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -195,7 +195,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "dogecoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "futurecoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -298,8 +298,8 @@ std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
         "  -?                     " + _("This help message") + "\n" +
-        "  -conf=<file>           " + _("Specify configuration file (default: dogecoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: dogecoind.pid)") + "\n" +
+        "  -conf=<file>           " + _("Specify configuration file (default: futurecoin.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: futurecoind.pid)") + "\n" +
         "  -gen                   " + _("Generate coins (default: 0)") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
         "  -dbcache=<n>           " + _("Set database cache size in megabytes (default: 25)") + "\n" +
