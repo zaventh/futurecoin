@@ -1089,9 +1089,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 24 * 60 * 60; // futurecoin: 24 hours
-static const int64 nTargetSpacing = 60 * 19 ; // futurecoin: ten minutes
-
+static const int64 nTargetSpacing 	= 10 * 60; // futurecoin: ten minutes
+static const int64 nTargetTimespan 	= 60 * 60;
 //
 // minimum amount of work that could possibly be required nTime after
 // minimum work required was nBase
@@ -1181,12 +1180,12 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-        static const int64        BlocksTargetSpacing                        = 1 * 60; // 1 Minute
-        unsigned int                TimeDaySeconds                                = 60 * 60 * 24;
-        int64                       PastSecondsMin                                = TimeDaySeconds * 0.01;
-        int64                       PastSecondsMax                                = TimeDaySeconds * 0.14;
-        uint64                      PastBlocksMin                                = PastSecondsMin / BlocksTargetSpacing;
-        uint64                      PastBlocksMax                                = PastSecondsMax / BlocksTargetSpacing;
+        static const int64		BlocksTargetSpacing	= nTargetSpacing; // ten minutes
+        unsigned int			TimeDaySeconds		= 60 * 60 * 24;
+        int64					PastSecondsMin		= TimeDaySeconds * 0.01;
+        int64					PastSecondsMax		= TimeDaySeconds * 0.14;
+        uint64					PastBlocksMin		= PastSecondsMin / BlocksTargetSpacing;
+        uint64					PastBlocksMax		= PastSecondsMax / BlocksTargetSpacing;
 
         return KimotoGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
 }
